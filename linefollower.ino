@@ -34,14 +34,15 @@ float leftSpeed;
 float rightSpeed;
 
 void turn(char direction, int correction) {
+    int speed = baseSpeed * correction;
     if (direction == 'L') {
-        analogWrite(11, baseSpeed * correction);
+        analogWrite(11, speed);
         analogWrite(10, baseSpeed);
     }
 
         else if (direction == 'R') {
         analogWrite(11, baseSpeed);
-        analogWrite(10, baseSpeed * correction);
+        analogWrite(10, speed);
     }
 }
 
